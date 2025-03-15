@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Elements with Different IDs</title>
+</head>
+<body>
+
+    <button id="addButton">Add New Element</button>
+    <div id="container"></div>
+
+    <script>
+        let counter = 1; // Initialize counter
+
+        document.getElementById("addButton").addEventListener("click", function() {
+            let newElement = document.createElement("p");
+            
+            // Set unique ID using counter
+            let uniqueId = "element-" + counter;
+            newElement.id = uniqueId;
+            
+            // Add text content
+            newElement.textContent = "This is element with ID: " + uniqueId;
+            
+            // Append it to the container
+            document.getElementById("container").appendChild(newElement);
+            
+            counter++; // Increment counter
+        });
+    </script>
+
+</body>
+</html>
